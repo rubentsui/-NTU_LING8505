@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pandas
+openpyxl
+unbabel-comet
+transquest
+torch
+transformers
+python-multipart
+xlrd
+sacrebleu
+bert-score
+huggingface_hub

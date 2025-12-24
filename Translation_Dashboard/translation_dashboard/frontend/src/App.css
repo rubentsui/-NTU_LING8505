@@ -1,0 +1,203 @@
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-primary);
+}
+
+.main-content {
+    flex: 1;
+    padding: var(--spacing-2xl) 0;
+}
+
+.dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.dashboard-section {
+    width: 100%;
+}
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-2xl);
+    min-height: 400px;
+    text-align: center;
+}
+
+.loading-spinner {
+    color: var(--color-primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-state h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.loading-state p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+/* Error State */
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-2xl);
+    text-align: center;
+}
+
+.error-icon {
+    color: var(--color-error);
+}
+
+.error-state h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.error-state p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin: 0;
+    max-width: 500px;
+}
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-2xl);
+    text-align: center;
+}
+
+.empty-icon {
+    color: var(--color-text-muted);
+    opacity: 0.5;
+}
+
+.empty-state h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.empty-state p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+/* Alert */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.alert-error {
+    background: hsla(0, 84%, 60%, 0.1);
+    border: 1px solid hsla(0, 84%, 60%, 0.3);
+    color: hsl(0, 84%, 80%);
+}
+
+.alert-success {
+    background: hsla(142, 76%, 36%, 0.1);
+    border: 1px solid hsla(142, 76%, 36%, 0.3);
+    color: hsl(142, 76%, 66%);
+}
+
+.alert-info {
+    background: hsla(250, 84%, 54%, 0.1);
+    border: 1px solid hsla(250, 84%, 54%, 0.3);
+    color: hsl(250, 84%, 74%);
+}
+
+.alert-close {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: var(--font-size-2xl);
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-base);
+}
+
+.alert-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Footer */
+.footer {
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-lg) 0;
+    margin-top: auto;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .dashboard-grid {
+        gap: var(--spacing-lg);
+    }
+}

@@ -1,0 +1,112 @@
+.mode-selector {
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.mode-selector-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.mode-icon {
+    color: var(--color-accent);
+}
+
+.mode-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.mode-tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.mode-tab {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: var(--color-bg-tertiary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-align: left;
+}
+
+.mode-tab:hover:not(:disabled) {
+    background: var(--color-bg-secondary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.mode-tab:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.mode-tab.active {
+    background: var(--gradient-primary);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-glow);
+}
+
+.mode-tab.active .mode-tab-content,
+.mode-tab.active .mode-tab-metrics {
+    color: white;
+}
+
+.mode-tab-reference.active {
+    background: linear-gradient(135deg, hsl(210, 84%, 54%) 0%, hsl(240, 70%, 60%) 100%);
+}
+
+.mode-tab-qe.active {
+    background: linear-gradient(135deg, hsl(142, 76%, 46%) 0%, hsl(170, 70%, 50%) 100%);
+}
+
+.mode-tab-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.mode-tab-metrics {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.mode-info {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.info-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: hsla(210, 84%, 54%, 0.1);
+    border: 1px solid hsla(210, 84%, 54%, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: hsl(210, 84%, 64%);
+}
+
+@media (max-width: 768px) {
+    .mode-tabs {
+        grid-template-columns: 1fr;
+    }
+}
