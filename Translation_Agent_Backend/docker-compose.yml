@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  translation-agent:
+    build: .
+    container_name: translation-agent
+    ports:
+      - "8000:8000"
+    volumes:
+      # Persist the Translation Memory database
+      - ./tm_db:/app/tm_db
+      # Mount artifacts directory if you want to inspect them (optional)
+      # - ./.agent:/app/.agent
+    env_file:
+      - .env
+    environment:
+      # Ensure args passed correctly if needed, but strict env vars are handled by .env
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
